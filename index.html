@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Pi Systems — Software That Sees the Full Picture</title>
+    <meta name="description" content="Four Pi Systems LLC builds intelligent software tools that turn complex data into clear, actionable insight.">
+    <meta name="theme-color" content="#050508">
+    <meta property="og:title" content="Four Pi Systems">
+    <meta property="og:description" content="Building the software layer between humans and insight.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fourpisystems.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Scanlines overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Noise overlay -->
+    <div class="noise"></div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FF2D78"/>
+                            <stop offset="100%" stop-color="#FFB020"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="0" y="32" font-family="'Space Mono', monospace" font-size="34" font-weight="700" fill="url(#logoGrad)">FP</text>
+                </svg>
+                <span>FOUR PI SYSTEMS</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">4&pi;</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="#about">4&pi;</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="grid-bg"></div>
+            <div class="wireframe-sphere">
+                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="200" r="180" stroke="currentColor" stroke-width="0.5"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="60" stroke="currentColor" stroke-width="0.5"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="120" stroke="currentColor" stroke-width="0.5"/>
+                    <ellipse cx="200" cy="200" rx="60" ry="180" stroke="currentColor" stroke-width="0.5"/>
+                    <ellipse cx="200" cy="200" rx="120" ry="180" stroke="currentColor" stroke-width="0.5"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="60" stroke="currentColor" stroke-width="0.5" transform="rotate(30 200 200)"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="60" stroke="currentColor" stroke-width="0.5" transform="rotate(60 200 200)"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="60" stroke="currentColor" stroke-width="0.5" transform="rotate(-30 200 200)"/>
+                    <ellipse cx="200" cy="200" rx="180" ry="60" stroke="currentColor" stroke-width="0.5" transform="rotate(-60 200 200)"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container hero-content">
+            <h1 class="hero-title anim-fade-up">
+                <span class="hero-fp glitch-text">FOUR PI</span>
+                <span class="hero-systems">SYSTEMS</span>
+            </h1>
+            <div class="hero-ctas anim-fade-up anim-delay-1">
+                <a href="#products" class="btn btn-ghost btn-large">
+                    Explore Products
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator anim-fade-up anim-delay-4">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="neon-divider"></div>
+        <div class="container">
+            <div class="about-content scroll-reveal">
+                <span class="section-tag">// 4&pi;</span>
+                <h2 class="section-title">What is <span class="gradient-text">4&pi;</span>?</h2>
+                <div class="about-description">
+                    <p class="about-text">4&pi; is the mathematical constant of total spherical symmetry, representing the complete &ldquo;view&rdquo; of three-dimensional space from a single point. While a circle is bounded by 2&pi; radians, a sphere encompasses 4&pi; steradians, a value derived from the fact that the surface area of a sphere (4&pi;r<sup>2</sup>) is exactly four times the area of its own circular cross-section (&pi;r<sup>2</sup>).</p>
+                    <p class="about-text">In physics and geometry, this constant serves as the ultimate &ldquo;normalization factor&rdquo;; it ensures that any flux, force, or energy radiating from a central source is accounted for as it spreads uniformly in every possible direction. It&rsquo;s the geometric signature of a world where conservation and symmetry are perfectly maintained across all three dimensions.</p>
+                </div>
+            </div>
+            <div class="about-canvas-wrap scroll-reveal">
+                <canvas id="sphereCanvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section" id="products">
+        <div class="neon-divider"></div>
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-tag">// Products</span>
+                <h2 class="section-title">What we're <span class="gradient-text">building</span></h2>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card scroll-reveal">
+                    <div class="product-card-left">
+                        <img class="product-logo" src="stooly-logo.png" alt="Stooly">
+                    </div>
+                    <div class="product-card-right">
+                        <div class="product-header">
+                            <h3 class="product-name">Stooly</h3>
+                            <span class="product-badge">
+                                <span class="badge-pulse"></span>
+                                Coming Soon
+                            </span>
+                        </div>
+                        <p class="product-tagline">AI-powered gut health tracking</p>
+                        <p class="product-desc">Know your gut in 10 seconds a day. AI analysis, Bristol Scale classification, and personalized wellness insights.</p>
+                        <a href="https://stooly.app" class="btn btn-ghost btn-small" target="_blank" rel="noopener">
+                            Visit stooly.app
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="neon-divider"></div>
+        <div class="container">
+            <div class="contact-layout scroll-reveal">
+                <span class="section-tag">// Contact</span>
+                <h2 class="section-title">Get in <span class="gradient-text">touch</span></h2>
+                <p class="contact-text">Questions, partnerships, or just saying hello.</p>
+                <a href="mailto:contact@fourpisystems.com" class="contact-email">
+                    <span class="terminal-prompt">&gt;</span> contact@fourpisystems.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="neon-divider"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo">
+                        <svg class="nav-logo-icon" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FF2D78"/>
+                                    <stop offset="100%" stop-color="#FFB020"/>
+                                </linearGradient>
+                            </defs>
+                            <text x="0" y="32" font-family="'Space Mono', monospace" font-size="34" font-weight="700" fill="url(#logoGrad2)">FP</text>
+                        </svg>
+                        <span>FOUR PI SYSTEMS</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Four Pi Systems LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sphere-animation.js"></script>
+</body>
+</html>
