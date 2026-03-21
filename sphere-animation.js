@@ -89,7 +89,7 @@
                 if (j === 0) ctx.moveTo(p.x, p.y);
                 else ctx.lineTo(p.x, p.y);
             }
-            ctx.strokeStyle = 'rgba(255, 45, 120, 0.06)';
+            ctx.strokeStyle = 'rgba(255, 45, 120, 0.15)';
             ctx.stroke();
         }
 
@@ -105,7 +105,7 @@
                 if (j === 0) ctx.moveTo(p.x, p.y);
                 else ctx.lineTo(p.x, p.y);
             }
-            ctx.strokeStyle = 'rgba(255, 45, 120, 0.06)';
+            ctx.strokeStyle = 'rgba(255, 45, 120, 0.15)';
             ctx.stroke();
         }
     }
@@ -122,7 +122,7 @@
                 theta = (2 * Math.PI * j) / LON;
                 p = transform(R * sp * Math.cos(theta), R * cp, R * sp * Math.sin(theta));
                 depth = (p.z + R) / (2 * R);
-                alpha = 0.06 + depth * 0.35;
+                alpha = 0.15 + depth * 0.5;
                 sz = (0.6 + depth * 1.8) * p.s;
 
                 ctx.beginPath();
@@ -140,12 +140,12 @@
 
         ctx.beginPath();
         ctx.arc(top.x, top.y, (0.6 + td * 1.8) * top.s, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 45, 120, ' + (0.06 + td * 0.35) + ')';
+        ctx.fillStyle = 'rgba(255, 45, 120, ' + (0.15 + td * 0.5) + ')';
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(bot.x, bot.y, (0.6 + bd * 1.8) * bot.s, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 45, 120, ' + (0.06 + bd * 0.35) + ')';
+        ctx.fillStyle = 'rgba(255, 45, 120, ' + (0.15 + bd * 0.5) + ')';
         ctx.fill();
     }
 
@@ -156,8 +156,8 @@
 
         var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, gr);
         g.addColorStop(0, 'rgba(255, 255, 255, 0.85)');
-        g.addColorStop(0.12, 'rgba(255, 45, 120, 0.5)');
-        g.addColorStop(0.45, 'rgba(255, 45, 120, 0.08)');
+        g.addColorStop(0.12, 'rgba(255, 45, 120, 0.7)');
+        g.addColorStop(0.45, 'rgba(255, 45, 120, 0.15)');
         g.addColorStop(1, 'rgba(255, 45, 120, 0)');
 
         ctx.beginPath();

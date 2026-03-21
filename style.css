@@ -487,15 +487,107 @@ img, svg { display: block; }
     letter-spacing: -0.02em;
 }
 
-/* --- About --- */
-.about-content {
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
+/* --- Bento Grid --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
 }
-.about-description {
-    margin-top: 28px;
+.bento-card {
+    background: var(--bg-elevated);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
+.bento-card:hover {
+    border-color: rgba(255, 45, 120, 0.25);
+    box-shadow: 0 0 24px rgba(255, 45, 120, 0.06);
+}
+
+.bento-large { grid-column: span 8; }
+.bento-stat {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bento-sphere {
+    grid-column: span 12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    min-height: 400px;
+}
+
+.bento-label {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neon-amber);
+    margin-bottom: 16px;
+}
+.bento-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.bento-heading-sm {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+/* Stat card */
+.stat-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    filter: drop-shadow(0 0 10px rgba(255, 45, 120, 0.4));
+    margin-bottom: 4px;
+}
+.stat-unit {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+.stat-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.stat-footer {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
+.bento-label-sm {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+/* Sphere canvas */
+#sphereCanvas {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* --- About text --- */
 .about-text {
     font-size: 1rem;
     line-height: 1.85;
@@ -508,46 +600,55 @@ img, svg { display: block; }
 .about-text sup {
     font-size: 0.7em;
 }
-.about-canvas-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 56px;
+
+/* --- Section Variants --- */
+.section-alt {
+    background: #131317;
+    border-top: 1px solid rgba(255, 45, 120, 0.1);
+    border-bottom: 1px solid rgba(255, 45, 120, 0.1);
 }
-#sphereCanvas {
-    display: block;
+
+/* Section split header */
+.section-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 64px;
+}
+.section-split-left {
     max-width: 600px;
-    width: 100%;
+}
+.section-split-right {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 350px;
+    text-align: right;
+    line-height: 1.7;
 }
 
 /* --- Products --- */
-.products-grid {
-    max-width: 720px;
-    margin: 0 auto;
-}
 .product-card {
     display: flex;
     align-items: center;
-    gap: 40px;
-    padding: 40px;
+    gap: 48px;
+    padding: 48px;
     background: var(--bg-elevated);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--neon-pink);
     border-radius: var(--radius);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 .product-card:hover {
-    border-color: rgba(255, 45, 120, 0.3);
-    border-left-color: var(--neon-pink);
-    box-shadow: 0 0 30px rgba(255, 45, 120, 0.08);
+    border-color: rgba(255, 45, 120, 0.2);
+    box-shadow: 0 0 30px rgba(255, 45, 120, 0.06);
 }
-.product-card-left {
+.product-card-visual {
     flex-shrink: 0;
 }
 .product-logo {
-    width: 64px;
+    width: 80px;
     height: auto;
 }
 .product-header {
@@ -561,25 +662,6 @@ img, svg { display: block; }
     font-size: 1.5rem;
     font-weight: 700;
 }
-.product-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    border-radius: 100px;
-    background: rgba(57, 255, 20, 0.08);
-    border: 1px solid rgba(57, 255, 20, 0.2);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--neon-green);
-}
-.product-badge .badge-pulse {
-    width: 5px;
-    height: 5px;
-}
 .product-tagline {
     font-size: 0.95rem;
     color: var(--text-secondary);
@@ -590,6 +672,29 @@ img, svg { display: block; }
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 20px;
+}
+.product-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.feature-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 45, 120, 0.4);
 }
 
 /* --- Contact --- */
@@ -714,6 +819,20 @@ body.loaded .anim-fade-up {
     .nav-mobile-toggle { display: flex; }
     .wireframe-sphere { width: 400px; height: 400px; }
     .hero-systems { letter-spacing: 0.3em; }
+
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-large,
+    .bento-stat,
+    .bento-sphere { grid-column: span 1; }
+
+    .section-split {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .section-split-right {
+        text-align: left;
+        max-width: none;
+    }
 }
 
 /* --- Responsive: Mobile --- */
@@ -725,6 +844,9 @@ body.loaded .anim-fade-up {
     .cursor-glow { display: none; }
     .scanlines { opacity: 0.2; }
     .hero-scroll-indicator { display: none; }
+
+    .bento-card { padding: 24px; }
+    .bento-sphere { padding: 12px; min-height: 280px; }
 
     .product-card {
         flex-direction: column;

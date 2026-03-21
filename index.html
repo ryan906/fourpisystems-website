@@ -105,49 +105,71 @@
     <section class="section" id="about">
         <div class="neon-divider"></div>
         <div class="container">
-            <div class="about-content scroll-reveal">
+            <div class="section-header scroll-reveal">
                 <span class="section-tag">// 4&pi;</span>
                 <h2 class="section-title">What is <span class="gradient-text">4&pi;</span>?</h2>
-                <div class="about-description">
+            </div>
+
+            <div class="bento-grid">
+                <!-- 4π explanation -->
+                <div class="bento-card bento-large scroll-reveal">
+                    <span class="bento-label">// Theory</span>
                     <p class="about-text">4&pi; is the mathematical constant of total spherical symmetry, representing the complete &ldquo;view&rdquo; of three-dimensional space from a single point. While a circle is bounded by 2&pi; radians, a sphere encompasses 4&pi; steradians, a value derived from the fact that the surface area of a sphere (4&pi;r<sup>2</sup>) is exactly four times the area of its own circular cross-section (&pi;r<sup>2</sup>).</p>
                     <p class="about-text">In physics and geometry, this constant serves as the ultimate &ldquo;normalization factor&rdquo;; it ensures that any flux, force, or energy radiating from a central source is accounted for as it spreads uniformly in every possible direction. It&rsquo;s the geometric signature of a world where conservation and symmetry are perfectly maintained across all three dimensions.</p>
                 </div>
-            </div>
-            <div class="about-canvas-wrap scroll-reveal">
-                <canvas id="sphereCanvas"></canvas>
+
+                <!-- Stat card -->
+                <div class="bento-card bento-stat scroll-reveal">
+                    <div>
+                        <div class="stat-value gradient-text">4&pi;</div>
+                        <div class="stat-unit">&asymp; 12.566 steradians</div>
+                        <p class="stat-desc">Total solid angle of a sphere. Complete spatial coverage in every direction.</p>
+                    </div>
+                    <div class="stat-footer">
+                        <span class="bento-label-sm">SURFACE: 4&pi;r&sup2;</span>
+                    </div>
+                </div>
+
+                <!-- Sphere animation -->
+                <div class="bento-card bento-sphere scroll-reveal">
+                    <canvas id="sphereCanvas"></canvas>
+                </div>
+
+
             </div>
         </div>
     </section>
 
     <!-- Products -->
-    <section class="section" id="products">
-        <div class="neon-divider"></div>
+    <section class="section section-alt" id="products">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">// Products</span>
-                <h2 class="section-title">What we're <span class="gradient-text">building</span></h2>
+            <div class="section-split scroll-reveal">
+                <div class="section-split-left">
+                    <span class="section-tag">// Products</span>
+                    <h2 class="section-title">What we&rsquo;re <span class="gradient-text">building</span></h2>
+                </div>
+                <p class="section-split-right">Intelligent tools designed to transform raw data into clarity and action.</p>
             </div>
 
-            <div class="products-grid">
-                <div class="product-card scroll-reveal">
-                    <div class="product-card-left">
-                        <img class="product-logo" src="stooly-logo.png" alt="Stooly">
+            <div class="product-card scroll-reveal">
+                <div class="product-card-visual">
+                    <img class="product-logo" src="stooly-logo.png" alt="Stooly">
+                </div>
+                <div class="product-card-info">
+                    <div class="product-header">
+                        <h3 class="product-name">Stooly</h3>
                     </div>
-                    <div class="product-card-right">
-                        <div class="product-header">
-                            <h3 class="product-name">Stooly</h3>
-                            <span class="product-badge">
-                                <span class="badge-pulse"></span>
-                                Coming Soon
-                            </span>
-                        </div>
-                        <p class="product-tagline">AI-powered gut health tracking</p>
-                        <p class="product-desc">Know your gut in 10 seconds a day. AI analysis, Bristol Scale classification, and personalized wellness insights.</p>
-                        <a href="https://stooly.app" class="btn btn-ghost btn-small" target="_blank" rel="noopener">
-                            Visit stooly.app
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                    </div>
+                    <p class="product-tagline">AI-powered gut health tracking</p>
+                    <p class="product-desc">Know your gut in 10 seconds a day. AI analysis, Bristol Scale classification, and personalized wellness insights.</p>
+                    <ul class="product-features">
+                        <li><span class="feature-dot"></span> AI Visual Analysis</li>
+                        <li><span class="feature-dot"></span> Bristol Scale Classification</li>
+                        <li><span class="feature-dot"></span> Personalized Insights</li>
+                    </ul>
+                    <a href="https://stooly.app" class="btn btn-ghost btn-small" target="_blank" rel="noopener">
+                        Visit stooly.app
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
